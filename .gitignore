@@ -1,0 +1,19 @@
+# Node.js dependencies
+node_modules/
+
+# Cypress specific folders and files
+cypress/screenshots/
+cypress/videos/
+cypress/downloads/
+
+
+
+
+
+
+
+
+
+
+
+
