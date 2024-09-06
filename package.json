@@ -1,5 +1,11 @@
 {
+  "name": "saucedemo",
+  "version": "1.0.0",
+  "scripts": {
+    "start": "cypress run"
+  },
   "devDependencies": {
     "cypress": "^13.14.2"
   }
+
 }
