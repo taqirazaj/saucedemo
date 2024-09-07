@@ -16,9 +16,8 @@ export const constants = {
         CheckIfCartIsEmpty: '[data-test="cart-item"]',
         DetailPage: '[data-test="inventory-item-name"]',
         AddToCart: '[data-test="add-to-cart"]',
-        RemoveFromCartViaDetail: '[data-test="remove"]'
+        RemoveFromCartViaDetail: '[data-test="remove"]',
     },
-
     Buy: {
        FirstName: '[data-test="firstName"]',
        LastName: '[data-test="lastName"]',
@@ -27,5 +26,10 @@ export const constants = {
        SubTotal: '[data-test="subtotal-label"]',
        Finish:'[data-test="finish"]',
        ThankYouMessage: '[data-test="complete-header"]',
+    },
+    Sorting: {
+       Filter:  '[data-test="product-sort-container"]',
+       InventoryItemPrice: '[data-test="inventory-item-price"]',
+       InventoryItemName: '[data-test="inventory-item-name"]' ,            
     }
 };

@@ -7,7 +7,10 @@ module.exports = defineConfig({
     defaultCommandTimeout: 10000, // 10 seconds
     pageLoadTimeout: 120000, // 2 minutes
     setupNodeEvents(on, config) {
+      // implement node event listeners here
     },
-  },
-},
-);
+    env: {
+      recordKey: '8d15e82b-5582-4fb1-aa76-1407ed8d7796' // This is for storing environment variables, but not used by Cypress Cloud
+    }
+  }
+});
