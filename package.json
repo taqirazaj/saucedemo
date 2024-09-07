@@ -4,8 +4,7 @@
   "scripts": {
     "start": "cypress run",
     "test:chrome": "npx cypress run --browser chrome",
-    "test:firefox": "npx cypress run --browser firefox",
-    "test:all": "npx npm-run-all --parallel test:chrome test:firefox"
+    "test:firefox": "npx cypress run --browser firefox"
   },
   "devDependencies": {
     "cypress": "^13.14.2",
