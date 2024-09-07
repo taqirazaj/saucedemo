@@ -1,9 +1,13 @@
 name: Cypress Tests
+
 on: [push]
 
 jobs:
-  cypress-run-chrome:
+  cypress-run:
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        browser: [chrome, firefox]
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -16,38 +20,13 @@ jobs:
         env:
           PORT: 3000
 
-      - name: Cypress run in Chrome
-        uses: cypress-io/github-action@v6
-        with:
-          start: npm start
-          record: true
-          parallel: true
-          browser: chrome
-        env:
-          CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
-  cypress-run-firefox:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-
-      - name: Install Dependencies
-        run: npm install
-
-      - name: Start Server
-        run: npm start &
-        env:
-          PORT: 3000
-
-      - name: Cypress run in Firefox
-        uses: cypress-io/github-action@v6
-        with:
-          start: npm start
-          record: true
-          parallel: true
-          browser: firefox
+      - name: Run Cypress Tests
+        run: |
+          if [ "${{ matrix.browser }}" = "chrome" ]; then
+            npm run test:chrome
+          elif [ "${{ matrix.browser }}" = "firefox" ]; then
+            npm run test:firefox
+          fi
         env:
           CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
