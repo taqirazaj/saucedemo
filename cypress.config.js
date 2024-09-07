@@ -1,10 +1,11 @@
 const { defineConfig } = require("cypress");
 
 module.exports = defineConfig({
-  projectId: '2asdmr',
+  projectId: "2asdmr",
   e2e: {
     baseUrl: 'https://www.saucedemo.com',
-    projectId: "2asdmr",
+    defaultCommandTimeout: 10000, // 10 seconds
+    pageLoadTimeout: 120000, // 2 minutes
     setupNodeEvents(on, config) {
       // implement node event listeners here
     },
