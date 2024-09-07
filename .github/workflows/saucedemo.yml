@@ -7,7 +7,6 @@ jobs:
     strategy:
       matrix:
         browser: [chrome, firefox]
-        containers: [1, 2] # Adjust as needed for parallel instances
       fail-fast: false
 
     steps:
