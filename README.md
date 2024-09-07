@@ -73,6 +73,10 @@ To run tests in a specific browser, use the --browser option when executing Cypr
   npx cypress run --browser firefox
   ```
 
+Test Result:
+
+[![saucedemo](https://img.shields.io/endpoint?url=https://cloud.cypress.io/badge/detailed/2asdmr/main&style=flat&logo=cypress)](https://cloud.cypress.io/projects/2asdmr/runs)
+
 
 
 
