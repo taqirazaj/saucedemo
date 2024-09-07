@@ -30,3 +30,13 @@ jobs:
         env:
           CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Generate Cypress Report
+        run: |
+          npx cypress-mochawesome-reporter generate
+
+      - name: Upload Cypress Report
+        uses: actions/upload-artifact@v3
+        with:
+          name: cypress-report
+          path: cypress/reports/mochawesome.html
